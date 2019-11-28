@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="cn.appInfo.Dao.DevUser.DevUserMapper">
+    <resultMap type="DevUser" id="BaseResultMap">
+    <id column="id"  property="id"/>
+    
+    <result column="devCode"  property="devCode"/>
+    
+    <result column="devName"  property="devName"/>
+    
+    <result column="devPassword"  property="devPassword"/>
+    
+    <result column="devEmail"  property="devEmail"/>
+    
+    <result column="devInfo"  property="devInfo"/>
+    
+    <result column="createdBy"  property="createdBy"/>
+    
+    <result column="creationDate"  property="creationDate"/>
+    
+    <result column="modifyBy"  property="modifyBy"/>
+    
+    <result column="modifyDate" property="modifyDate"/>
+    </resultMap>
+    
+    <!-- FullResultMap还没配 -->
+  
+  <select id="DevUserlogin" resultMap="BaseResultMap">
+  SELECT id,devCode,devName FROM dev_user where devCode=#{devCode} and devPassword=#{devPassword}
+  </select>
+  
+  
+  
+  
+  </mapper>
+  
